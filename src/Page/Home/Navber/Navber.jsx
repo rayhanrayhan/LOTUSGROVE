@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import logo from "./../../../assets/LotusGrove.png";
 
 const Navber = () => {
+  const [user, setUser] = useState(true);
   const navPages = (
     <>
       <li>
@@ -57,9 +58,37 @@ const Navber = () => {
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">{navPages}</ul>
       </div>
-      <div className="navbar-end">
-        {/* <a className="btn">User</a> */}
-        <img className="w-16 h-16 border rounded-full" src={logo} alt="" />
+
+      {/* user profile  */}
+      <div className="navbar-end ">
+        {/* user picture  */}
+        <div className="relative group">
+          <button className="btn btn-ghost btn-circle">
+            <img
+              className="w-10 h-10 rounded-full  "
+              // src={user?.displayName}
+              src={logo}
+              alt=""
+            />
+          </button>
+          <h1 className="absolute -bottom-10 bg-white  px-6 py-2 rounded-lg opacity-0 invisible shadow-md right-0 group-hover:opacity-100 group-hover:visible duration-300">
+            {/* {user?.displayName} */}
+            Rayhan khan
+          </h1>
+        </div>
+
+        {/* login button  */}
+        <ul>
+          {user ? (
+            <li>
+              <button>Logout</button>
+            </li>
+          ) : (
+            <li>
+              <Link to="/login">Login</Link>
+            </li>
+          )}
+        </ul>
       </div>
     </div>
   );

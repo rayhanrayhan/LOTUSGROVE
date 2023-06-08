@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import logo from "./../../../assets/LotusGrove.png";
 
 const Navber = () => {
-  const [user, setUser] = useState(true);
+  const [user, setUser] = useState(false);
   const navPages = (
     <>
       <li>

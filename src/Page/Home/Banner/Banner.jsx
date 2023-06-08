@@ -44,7 +44,7 @@ const Banner = () => {
 
         <div className="absolute top-1/2 md:top-[360px] left-1/2  transform -translate-x-5 -translate-y-16">
           <div className="w-full px-4 md:px-0 md:w-[570px] text-right">
-            <h1 className="md:text-6xl text-xs font-bold text-[#ffffff] md:drop-shadow-lg hover:shadow-red-700 ">
+            <h1 className="md:text-6xl text-xs font-bold text-[#ffffff] md:drop-shadow-lg hover:shadow-black ">
               Your Place to Discover Wellness
             </h1>
             <p className="text-white md:text-sm text-[10px] ">

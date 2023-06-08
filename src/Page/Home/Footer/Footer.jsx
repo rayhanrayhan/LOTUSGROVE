@@ -2,6 +2,9 @@ import React from "react";
 import logo from "./../../../assets/LotusGrove.png";
 import paymentIcon from "./../../../assets/SSL.png";
 import { Link } from "react-router-dom";
+import { FaAddressBook } from "react-icons/fa";
+import { MdEmail } from "react-icons/md";
+import { FiPhone } from "react-icons/fi";
 
 const Footer = () => {
   return (
@@ -13,6 +16,18 @@ const Footer = () => {
             LOTUS GROVE
             <br />
             Unlock Your Potential for Wellness and Flourishing
+          </p>
+          <p className="flex items-center gap-1">
+            <FaAddressBook /> address:
+            <span>1800 Abbot Kinney Nebraska UK</span>
+          </p>
+          <p className="flex items-center gap-1">
+            <MdEmail />
+            Email: <span>hello@example.com</span>
+          </p>
+          <p className="flex items-center gap-1">
+            <FiPhone />
+            Phone: <span>(012) 345 6789</span>
           </p>
         </div>
 

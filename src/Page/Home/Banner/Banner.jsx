@@ -30,7 +30,7 @@ const Banner = () => {
       onClickItem={onClickItem}
       onClickThumb={onClickThumb}
       infiniteLoop={true}
-      autoPlay={false}
+      autoPlay={true}
       interval={5000}
       stopOnHover={false}
       emulateTouch={true}
@@ -42,37 +42,80 @@ const Banner = () => {
       <div className="relative">
         <img src={banner2} className="banner-image" />
 
-        <div className="absolute top-52  -right-20">
-          <div className="w-full mx-4 md:mx-0 md:w-[570px] text-right">
-            <h1 className="text-7xl font-extrabold text-[#ffffff]">
+        <div className="absolute top-1/2 md:top-[360px] left-1/2  transform -translate-x-5 -translate-y-16">
+          <div className="w-full px-4 md:px-0 md:w-[570px] text-right">
+            <h1 className="md:text-6xl text-xs font-bold text-[#ffffff] md:drop-shadow-lg hover:shadow-red-700 ">
               Your Place to Discover Wellness
             </h1>
-            <p>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-              Perferendis repellendus impedit, magni maxime consequatur vero
-              velit quidem sunt eum itaque!
+            <p className="text-white md:text-sm text-[10px] ">
+              "Discover the Infinite Possibilities of Wellness: Nourish Your
+              Body, Nurture Your Mind, and Illuminate Your Soul for Lasting
+              Health and Happiness"!
             </p>
-            <button className="my-5 py-1 md:py-5 px-3 md:px-7 rounded-lg text-sm text-white font-bold md:font-extrabold bg-gradient-to-r from-from-[#7E90FE] from-[#9873FF]">
-              Get Started
+            <button className="my-5 py-1 md:py-3 px-3 md:px-7 rounded-lg md:text-base text-xs text-white font-semibold md:font-extrabold bg-gradient-to-r from-[#7E90FE]">
+              Join With Us
             </button>
-          </div>
-          <div className="md:w-[816px]">
-            <img src="/man.png" alt="" />
           </div>
         </div>
       </div>
 
-      <div>
-        <img src={banner1} />
-        <p className="legend">Legend 2</p>
+      <div className="relative">
+        <img src={banner1} className="banner-image" />
+
+        <div className="absolute top-1/2 md:top-[400px] left-1/2  transform -translate-x-5 -translate-y-16 drop-shadow-2xl shadow-black">
+          <div className="w-full px-4 md:px-0 md:w-[570px] text-right">
+            <h1 className="md:text-6xl   text-xs font-semibold text-[#ffffff] md:drop-shadow-lg hover:shadow-red-700 ">
+              Your Place to Discover Wellness
+            </h1>
+            <p className="text-white md:text-sm text-[10px] ">
+              "Discover the Infinite Possibilities of Wellness: Nourish Your
+              Body, Nurture Your Mind, and Illuminate Your Soul for Lasting
+              Health and Happiness"!
+            </p>
+            <button className="my-5 py-1 md:py-3 px-3 md:px-7 rounded-lg md:text-base text-xs text-white font-semibold md:font-extrabold bg-gradient-to-r from-[#7E90FE]">
+              Join With Us
+            </button>
+          </div>
+        </div>
       </div>
-      <div>
-        <img src={banner3} />
-        <p className="legend">Legend 3</p>
+
+      <div className="relative">
+        <img src={banner3} className="banner-image" />
+
+        <div className="absolute top-1/2 md:top-72 drop-shadow-2xl shadow-black left-1/2  transform -translate-x-5 -translate-y-16">
+          <div className="w-full px-4 md:px-0 md:w-[570px] text-right">
+            <h1 className="md:text-6xl text-xs font-semibold text-[#ffffff] md:drop-shadow-lg hover:shadow-red-700 ">
+              Your Place to Discover Wellness
+            </h1>
+            <p className="text-white md:text-sm text-[10px] ">
+              "Discover the Infinite Possibilities of Wellness: Nourish Your
+              Body, Nurture Your Mind, and Illuminate Your Soul for Lasting
+              Health and Happiness"!
+            </p>
+            <button className="my-5 py-1 md:py-3 px-3 md:px-7 rounded-lg md:text-base text-xs text-white font-bold md:font-semibold bg-gradient-to-r from-[#7E90FE]">
+              Join With Us
+            </button>
+          </div>
+        </div>
       </div>
-      <div>
-        <img src={banner4} />
-        <p className="legend">Legend 4</p>
+
+      <div className="relative">
+        <img src={banner4} className="banner-image" />
+        <div className="absolute top-1/2 md:top-72 drop-shadow-2xl shadow-black left-1/2  transform -translate-x-5 -translate-y-16">
+          <div className="w-full px-4 md:px-0 md:w-[570px] text-right">
+            <h1 className="md:text-6xl text-xs font-bold text-[#ffffff] md:drop-shadow-lg hover:shadow-red-700 ">
+              Your Place to Discover Wellness
+            </h1>
+            <p className="text-white  md:text-sm text-[10px]">
+              "Discover the Infinite Possibilities of Wellness: Nourish Your
+              Body, Nurture Your Mind, and Illuminate Your Soul for Lasting
+              Health and Happiness"!
+            </p>
+            <button className="my-5 py-1 md:py-3 px-3 md:px-7 rounded-lg md:text-base text-xs text-white font-bold md:font-extrabold bg-gradient-to-r from-[#7E90FE]">
+              Join With Us
+            </button>
+          </div>
+        </div>
       </div>
     </Carousel>
   );

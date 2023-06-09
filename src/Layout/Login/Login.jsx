@@ -134,6 +134,7 @@ const Login = () => {
                     <FiEye size={20} />
                   )}
                 </div>
+
                 <div className="form-control">
                   <label className="label">
                     <div className="border  rounded-lg py-1 px-1">

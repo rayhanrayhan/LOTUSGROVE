@@ -7,54 +7,54 @@ import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
 
 const Register = () => {
-  //  use react - formik- hooks
   const {
     register,
     handleSubmit,
     formState: { errors },
+    watch,
   } = useForm();
 
   const onSubmit = (data) => console.log(data);
-  const [passwordVisible, setPasswordVisible] = useState(false);
 
-  const togglePasswordVisibility = () => {
-    setPasswordVisible((prev) => !prev);
+  const [passwordVisible, setPasswordVisible] = useState(false);
+  const [confirmPasswordVisible, setConfirmPasswordVisible] = useState(false);
+
+  const togglePasswordVisibility = (field) => {
+    if (field === "password") {
+      setPasswordVisible((prev) => !prev);
+    } else if (field === "confirmPassword") {
+      setConfirmPasswordVisible((prev) => !prev);
+    }
   };
+
+  const password = watch("password", "");
 
   return (
     <div>
       <Helmet>
         <title>LOTUSGROVE || REGISTER</title>
       </Helmet>
-      {/* Login form */}
-      <div className="hero min-h-screen bg-base-200">
+      <div className="hero min-h-screen bg-base-200 pt-20">
         <div className="md:flex justify-around items-center mx-2 md:mx-16">
-          {/* Form section */}
           <div className="text-center mb-8 md:mb-0">
             <h1 className="text-4xl font-bold">Register Now</h1>
-            <Lottie
-              className="w-[550px] "
-              animationData={registrationAnimation}
-            />
+            <Lottie className=" " animationData={registrationAnimation} />
           </div>
 
-          {/* Form section */}
           <div className="card flex-shrink-0 w-full md:w-6/12 shadow-2xl bg-base-100">
             <form onSubmit={handleSubmit(onSubmit)} className="card-body">
-              {/* form main body  */}
               <div className="form-control">
                 <label className="label">
                   <span className="label-text">Name</span>
                 </label>
                 <input
                   type="text"
-                  {...register("name", { required: true })}
-                  name="name"
+                  {...register("name", { required: "Name is required" })}
                   placeholder="Type Your full Name"
                   className="input input-bordered"
                 />
                 {errors.name && (
-                  <span className="text-red-600">Name is required</span>
+                  <span className="text-red-600">{errors.name.message}</span>
                 )}
               </div>
               <div className="form-control">
@@ -63,13 +63,12 @@ const Register = () => {
                 </label>
                 <input
                   type="email"
-                  {...register("email", { required: true })}
-                  name="email"
+                  {...register("email", { required: "Email is required" })}
                   placeholder="write a valid email"
                   className="input input-bordered"
                 />
                 {errors.email && (
-                  <span className="text-red-600">email is required</span>
+                  <span className="text-red-600">{errors.email.message}</span>
                 )}
               </div>
               <div className="form-control relative">
@@ -78,17 +77,29 @@ const Register = () => {
                 </label>
                 <input
                   type={passwordVisible ? "text" : "password"}
-                  {...register("password", { required: true })}
-                  name="password"
-                  placeholder="type a new password"
+                  {...register("password", {
+                    required: "Password is required",
+                    minLength: {
+                      value: 6,
+                      message: "Password must be at least 6 characters",
+                    },
+                    pattern: {
+                      value: /(?=.*[A-Z])(?=.*[!@#$&*])(?=.*[0-9])(?=.*[a-z])/,
+                      message:
+                        "Password must have at least one uppercase letter, one lowercase letter, one number, and one special character",
+                    },
+                  })}
+                  placeholder="Type a new password"
                   className="input input-bordered pr-10"
                 />
                 {errors.password && (
-                  <span className="text-red-600">password is required</span>
+                  <span className="text-red-600">
+                    {errors.password.message}
+                  </span>
                 )}
                 <div
-                  className="absolute top-1/2 right-3 transform -translate-y-1/2 cursor-pointer"
-                  onClick={togglePasswordVisibility}
+                  className="absolute top- right-3 transform translate-y-[50px] cursor-pointer"
+                  onClick={() => togglePasswordVisibility("password")}
                 >
                   {passwordVisible ? (
                     <FiEyeOff size={20} />
@@ -102,65 +113,62 @@ const Register = () => {
                   <span className="label-text">Confirm Password</span>
                 </label>
                 <input
-                  type={passwordVisible ? "text" : "password"}
-                  {...register("password", {
-                    required: true,
-                    maxLength: 20,
-                    minLength: 6,
+                  type={confirmPasswordVisible ? "text" : "password"}
+                  {...register("confirmPassword", {
+                    required: "Confirm Password is required",
+                    validate: (value) =>
+                      value === password || "Passwords do not match",
                   })}
-                  name="password"
-                  placeholder="repeat your password again"
+                  placeholder="Repeat your password again"
                   className="input input-bordered pr-10"
                 />
-
-                {errors.password?.type === "required" && (
-                  <p className="text-red-600">Password is required</p>
+                {errors.confirmPassword && (
+                  <span className="text-red-600">
+                    {errors.confirmPassword.message}
+                  </span>
                 )}
                 <div
-                  className="absolute top-1/2 right-3 transform -translate-y-1/2 cursor-pointer"
-                  onClick={togglePasswordVisibility}
+                  className="absolute top-1/2 right-3 transform translate-y-2 cursor-pointer"
+                  onClick={() => togglePasswordVisibility("confirmPassword")}
                 >
-                  {passwordVisible ? (
+                  {confirmPasswordVisible ? (
                     <FiEyeOff size={20} />
                   ) : (
                     <FiEye size={20} />
                   )}
                 </div>
-                <div className="form-control">
-                  <label className="label">
-                    <span className="label-text">Photo URL</span>
-                  </label>
-                  <input
-                    type="text"
-                    {...register("photo", {
-                      required: true,
-                      maxLength: 20,
-                      minLength: 6,
-                    })}
-                    name="photo"
-                    placeholder="Place Your Photo URL"
-                    className="input input-bordered"
-                  />
-                  {errors.password?.type === "required" && (
-                    <p className="text-red-600">Password is required</p>
-                  )}
-                </div>
+              </div>
+              <div className="form-control">
+                <label className="label">
+                  <span className="label-text">Photo URL</span>
+                </label>
+                <input
+                  type="text"
+                  {...register("photo", {
+                    required: "Photo URL is required",
+                  })}
+                  placeholder="Place Your Photo URL"
+                  className="input input-bordered"
+                />
+                {errors.photo && (
+                  <span className="text-red-600">{errors.photo.message}</span>
+                )}
               </div>
               <div className="form-control mt-6">
-                <button className="btn btn-primary">Register</button>
+                <button type="submit" className="btn btn-primary">
+                  Register
+                </button>
               </div>
             </form>
             <div className="mb-3 mx-auto">
               <p>
-                You Have a Account ??
+                Already have an account?{" "}
                 <Link to="/login" className="text-pink-600">
                   Login Now
                 </Link>
               </p>
             </div>
           </div>
-
-          {/* Form section end */}
         </div>
       </div>
     </div>

@@ -1,0 +1,112 @@
+[
+    {
+        "name": "Mindful Yoga",
+        "instructor": "Rodney Yee",
+        "instructorImage": "https://i.ibb.co/zsnZrnQ/01.jpg",
+        "email": "sarahjohnson@example.com",
+        "image": "https://i.ibb.co/rkgzyR3/b01.jpg",
+        "des": "Experience the power of mindful yoga and discover inner peace. Learn various yoga postures, breathing techniques, and meditation practices.",
+        "price": 40,
+        "seats": 20,
+        "students": 15
+    },
+    {
+        "name": "Zen Meditation Retreat",
+        "instructor": "Shiva Rea",
+        "instructorImage": "https://i.ibb.co/5s9tDyR/02.jpg",
+        "email": "michaelthompson@example.com",
+        "image": "https://i.ibb.co/qscYNkf/b02.jpg",
+        "des": "Embark on a peaceful journey through Zen meditation. Explore mindfulness, cultivate stillness, and find tranquility within yourself.",
+        "price": 50,
+        "seats": 15,
+        "students": 8
+    },
+    {
+        "name": "Gentle Yoga Flow",
+        "instructor": "Seane Corn",
+        "instructorImage": "https://i.ibb.co/M7dTYWT/03.jpg",
+        "email": "emilydavis@example.com",
+        "image": "https://i.ibb.co/GQv34z1/b03.jpg",
+        "des": "Indulge in the gentle practice of yoga and experience a soothing flow of movement. Relax your mind, rejuvenate your body, and restore your energy.",
+        "price": 30,
+        "seats": 25,
+        "students": 12
+    },
+    {
+        "name": "Chakra Meditation Workshop",
+        "instructor": "Kathryn Budig",
+        "instructorImage": "https://i.ibb.co/2Y5Mgkp/04.jpg",
+        "email": "davidwilson@example.com",
+        "image": "https://i.ibb.co/QkMQQmm/b04.jpg",
+        "des": "Dive into the world of chakras and harness their energy through meditation. Explore the subtle body and balance your mind, body, and spirit.",
+        "price": 45,
+        "seats": 18,
+        "students": 10
+    },
+    {
+        "name": "Vinyasa Yoga Flow",
+        "instructor": "Ana Forrest",
+        "instructorImage": "https://i.ibb.co/Lnx0prr/05.jpg",
+        "email": "jessicaadams@example.com",
+        "image": "https://i.ibb.co/DKL7vg7/b05.jpg",
+        "des": "Immerse yourself in the dynamic movements of Vinyasa yoga. Build strength, increase flexibility, and experience a flowing sequence of postures.",
+        "price": 35,
+        "seats": 22,
+        "students": 14
+    },
+    {
+        "name": "Meditation for Stress Relief",
+        "instructor": "Bryan Kest",
+        "instructorImage": "https://i.ibb.co/S7xJfCS/06.jpg",
+        "email": "daniellee@example.com",
+        "image": "https://i.ibb.co/Nr8qwgB/b06.jpg",
+        "des": "Discover effective meditation techniques to release stress and anxiety. Cultivate a calm and peaceful state of mind for improved well-being.",
+        "price": 40,
+        "seats": 20,
+        "students": 16
+    },
+    {
+        "name": "Yoga Nidra Retreat",
+        "instructor": "Baron Baptiste",
+        "instructorImage": "https://i.ibb.co/bKsQDKh/07.jpg",
+        "email": "sophiaanderson@example.com",
+        "image": "https://i.ibb.co/mcD17L2/b07.jpg",
+        "des": "Experience deep relaxation and profound meditation through the practice of Yoga Nidra. Unwind, rejuvenate, and explore inner realms of consciousness.",
+        "price": 55,
+        "seats": 12,
+        "students": 7
+    },
+    {
+        "name": "Hatha Yoga Foundations",
+        "instructor": "Elena Brower",
+        "instructorImage": "https://i.ibb.co/9sm5CmX/08.jpg",
+        "email": "matthewharris@example.com",
+        "image": "https://i.ibb.co/2MftCtz/b08.jpg",
+        "des": "Build a solid foundation in Hatha yoga and learn fundamental postures and breath control techniques. Develop body awareness and inner balance.",
+        "price": 30,
+        "seats": 25,
+        "students": 18
+    },
+    {
+        "name": "Yin Yoga for Flexibility",
+        "instructor": "Tiffany Cruikshank",
+        "instructorImage": "https://i.ibb.co/JyxbY3H/09.jpg",
+        "email": "oliviaroberts@example.com",
+        "image": "https://i.ibb.co/JKL43BJ/b09.jpg",
+        "des": "Experience deep stretching and relaxation in Yin yoga. Enhance flexibility, release tension, and find balance between effort and ease.",
+        "price": 35,
+        "seats": 20,
+        "students": 13
+    },
+    {
+        "name": "Meditative Walk in Nature",
+        "instructor": "Colleen Saidman Yee",
+        "instructorImage": "https://i.ibb.co/sqsCCG2/10.jpg",
+        "email": "andrewthompson@example.com",
+        "image": "https://i.ibb.co/nCdmmPj/b10.jpg",
+        "des": "Connect with nature and practice walking meditation. Immerse yourself in the present moment, appreciate the beauty around you, and find inner peace.",
+        "price": 25,
+        "seats": 30,
+        "students": 20
+    }
+]

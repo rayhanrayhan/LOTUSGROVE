@@ -3,6 +3,7 @@ import Banner from "../Banner/Banner";
 import Footer from "../Footer/footer";
 import { Helmet } from "react-helmet-async";
 import PopularClasses from "../PopularClasses/PopularClasses";
+import PopularInstractor from "../PopularInstractor/PopularInstractor";
 
 const Home = () => {
   return (
@@ -12,6 +13,7 @@ const Home = () => {
       </Helmet>
       <Banner></Banner>
       <PopularClasses></PopularClasses>
+      <PopularInstractor></PopularInstractor>
       <Footer></Footer>
     </div>
   );

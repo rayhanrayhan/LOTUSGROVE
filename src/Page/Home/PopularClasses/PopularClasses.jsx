@@ -18,7 +18,7 @@ const PopularClasses = () => {
   const currentCards = popularClass.slice(0, 6);
 
   return (
-    <div className="container mx-auto px-4">
+    <div className="container mx-auto px-4 border">
       <div className="text-2xl md:text-4xl text-center font-bold py-8">
         Popular Classes
       </div>

@@ -1,23 +1,34 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import ExtraClassCard from "./ExtraClassCard";
 
 const ExtraSection = () => {
+  const [extraClass, setExtraClass] = useState([]);
+
+  useEffect(() => {
+    fetch("./extra.json")
+      .then((res) => res.json())
+      .then((data) => {
+        setExtraClass(data);
+      });
+  }, []);
+
   return (
-    <div>
-      <div className="card w-96 bg-base-100 shadow-xl">
-        <figure className="px-10 pt-10">
-          <img
-            src="/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg"
-            alt="Shoes"
-            className="rounded-xl"
-          />
-        </figure>
-        <div className="card-body items-center text-center">
-          <h2 className="card-title">Shoes!</h2>
-          <p>If a dog chews shoes whose shoes does he choose?</p>
-          <div className="card-actions">
-            <button className="btn btn-primary">Buy Now</button>
-          </div>
-        </div>
+    <div className="container mx-auto px-4 border">
+      <div className="text-center my-4">
+        <h2 className="text-xl md:text-3xl mb-2 font-bold">
+          Your Healthy Choices
+        </h2>
+        <p className="text-base">
+          I'm a passionate advocate for healthy choices and believe in the
+          transformative power they have on our lives. From nourishing my body
+          with wholesome foods to staying active through regular exercise, I
+          prioritize my well-being.
+        </p>
+      </div>
+      <div className="grid grid-cols-1 md:grid-cols-3  gap-4 justify-center">
+        {extraClass.map((classes) => (
+          <ExtraClassCard key={classes._id} classes={classes} />
+        ))}
       </div>
     </div>
   );

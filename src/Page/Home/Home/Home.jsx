@@ -4,6 +4,7 @@ import Footer from "../Footer/footer";
 import { Helmet } from "react-helmet-async";
 import PopularClasses from "../PopularClasses/PopularClasses";
 import PopularInstractor from "../PopularInstractor/PopularInstractor";
+import ExtraSection from "../ExtraSection/ExtraSection";
 
 const Home = () => {
   return (
@@ -14,7 +15,7 @@ const Home = () => {
       <Banner></Banner>
       <PopularClasses></PopularClasses>
       <PopularInstractor></PopularInstractor>
-      <Footer></Footer>
+      <ExtraSection></ExtraSection>
     </div>
   );
 };

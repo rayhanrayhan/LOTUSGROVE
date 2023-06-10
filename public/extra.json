@@ -1,0 +1,20 @@
+[
+    {
+        "_id": "1",
+        "image": "https://i.ibb.co/gStSJd4/portfolio1.jpg",
+        "name": "Extra Fruit Your Desert",
+        "description": "Fruits are packed with essential nutrients, fiber, and antioxidants that support overall health and well-being."
+    },
+    {
+        "_id": "2",
+        "image": "https://i.ibb.co/Yy3HT6B/portfolio2.jpg",
+        "name": "Habit for Longer Life",
+        "description": " practicing stress management techniques,  and maintaining  contribute to a healthier and longer life.."
+    },
+    {
+        "_id": "3",
+        "image": "https://i.ibb.co/JrrT2dJ/portfolio3.jpg",
+        "name": "Physical Activity",
+        "description": "Physical activity involves movement and energy expenditure, benefiting fitness, health, and mental well-being."
+    }
+]

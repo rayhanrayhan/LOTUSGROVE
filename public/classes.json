@@ -1,38 +1,42 @@
 [
     {
+        "_id": "01",
         "name": "Mindful Yoga",
         "instructor": "Rodney Yee",
-        "instructorImage": "https://i.ibb.co/zsnZrnQ/01.jpg",
+        "instructorImage": "https://i.postimg.cc/dQ6htYSb/001.png",
         "email": "sarahjohnson@example.com",
-        "image": "https://i.ibb.co/rkgzyR3/b01.jpg",
+        "image": "https://i.postimg.cc/wTHLB2Vr/b01.jpg",
         "des": "Experience the power of mindful yoga and discover inner peace. Learn various yoga postures, breathing techniques, and meditation practices.",
         "price": 40,
         "seats": 20,
         "students": 15
     },
     {
+        "_id": "02",
         "name": "Zen Meditation Retreat",
         "instructor": "Shiva Rea",
         "instructorImage": "https://i.ibb.co/5s9tDyR/02.jpg",
         "email": "michaelthompson@example.com",
-        "image": "https://i.ibb.co/qscYNkf/b02.jpg",
+        "image": "https://i.postimg.cc/MKy5PXsC/b02.jpg",
         "des": "Embark on a peaceful journey through Zen meditation. Explore mindfulness, cultivate stillness, and find tranquility within yourself.",
         "price": 50,
         "seats": 15,
         "students": 8
     },
     {
+        "_id": "03",
         "name": "Gentle Yoga Flow",
         "instructor": "Seane Corn",
         "instructorImage": "https://i.ibb.co/M7dTYWT/03.jpg",
         "email": "emilydavis@example.com",
-        "image": "https://i.ibb.co/GQv34z1/b03.jpg",
+        "image": "https://i.postimg.cc/26KhyN0F/b03.jpg",
         "des": "Indulge in the gentle practice of yoga and experience a soothing flow of movement. Relax your mind, rejuvenate your body, and restore your energy.",
         "price": 30,
         "seats": 25,
         "students": 12
     },
     {
+        "_id": "04",
         "name": "Chakra Meditation Workshop",
         "instructor": "Kathryn Budig",
         "instructorImage": "https://i.ibb.co/2Y5Mgkp/04.jpg",
@@ -44,6 +48,7 @@
         "students": 10
     },
     {
+        "_id": "05",
         "name": "Vinyasa Yoga Flow",
         "instructor": "Ana Forrest",
         "instructorImage": "https://i.ibb.co/Lnx0prr/05.jpg",
@@ -55,6 +60,7 @@
         "students": 14
     },
     {
+        "_id": "06",
         "name": "Meditation for Stress Relief",
         "instructor": "Bryan Kest",
         "instructorImage": "https://i.ibb.co/S7xJfCS/06.jpg",
@@ -66,6 +72,7 @@
         "students": 16
     },
     {
+        "_id": "07",
         "name": "Yoga Nidra Retreat",
         "instructor": "Baron Baptiste",
         "instructorImage": "https://i.ibb.co/bKsQDKh/07.jpg",
@@ -77,6 +84,7 @@
         "students": 7
     },
     {
+        "_id": "08",
         "name": "Hatha Yoga Foundations",
         "instructor": "Elena Brower",
         "instructorImage": "https://i.ibb.co/9sm5CmX/08.jpg",
@@ -88,6 +96,7 @@
         "students": 18
     },
     {
+        "_id": "09",
         "name": "Yin Yoga for Flexibility",
         "instructor": "Tiffany Cruikshank",
         "instructorImage": "https://i.ibb.co/JyxbY3H/09.jpg",
@@ -99,6 +108,7 @@
         "students": 13
     },
     {
+        "_id": "10",
         "name": "Meditative Walk in Nature",
         "instructor": "Colleen Saidman Yee",
         "instructorImage": "https://i.ibb.co/sqsCCG2/10.jpg",

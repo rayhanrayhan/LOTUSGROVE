@@ -26,7 +26,7 @@ const PopularClassCard = ({ classItem }) => {
         data-aos="fade-up"
         data-aos-duration="800"
       >
-        <div className="card w-96 bg-base-100 md:shadow-xl md:hover:shadow-xl md:hover:drop-shadow-2xl">
+        <div className="card w-96 border  border-[#22bb83] bg-base-100 md:shadow-xl md:hover:shadow-xl md:hover:drop-shadow-2xl">
           <figure>
             <img src={image} alt="Shoes" />
           </figure>
@@ -45,10 +45,10 @@ const PopularClassCard = ({ classItem }) => {
             </p>
             <div className="card-actions justify-between">
               <div className="">
-                Price: $<span className="text-red-600 font-bold">{price}</span>
+                Price: $ <span className="text-red-600 font-bold">{price}</span>
               </div>
               <div className="">
-                Seats: <span className="text-red-600 font-bold">{seats}</span>
+                Seats: <span className="text-red-600 font-bold"> {seats}</span>
               </div>
             </div>
           </div>

@@ -9,9 +9,9 @@ const ExtraClassCard = ({ classes }) => {
     AOS.init({ duration: 800 });
   }, []);
   return (
-    <div className="my-6 flex justify-center">
+    <div className="my-6 flex justify-center ">
       <div
-        className="card w-96 bg-base-100 md:shadow-xl md:hover:shadow-xl md:hover:drop-shadow-2xl "
+        className="card border  border-[#22bb83]  bg-base-100 md:shadow-xl md:hover:shadow-xl md:hover:drop-shadow-2xl "
         data-aos="fade-up"
         data-aos-duration="500"
       >

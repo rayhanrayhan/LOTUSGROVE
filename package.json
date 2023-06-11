@@ -12,6 +12,7 @@
   "dependencies": {
     "aos": "^3.0.0-beta.6",
     "firebase": "^9.22.2",
+    "keen-slider": "^6.8.5",
     "localforage": "^1.10.0",
     "lottie-react": "^2.4.0",
     "lottie-web": "^5.12.0",

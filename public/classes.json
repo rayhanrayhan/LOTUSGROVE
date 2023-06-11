@@ -9,7 +9,8 @@
         "des": "Experience the power of mindful yoga and discover inner peace. Learn various yoga postures, breathing techniques, and meditation practices.",
         "price": 40,
         "seats": 20,
-        "students": 15
+        "students": 15,
+        "classes": 3
     },
     {
         "_id": "02",
@@ -21,7 +22,8 @@
         "des": "Embark on a peaceful journey through Zen meditation. Explore mindfulness, cultivate stillness, and find tranquility within yourself.",
         "price": 50,
         "seats": 15,
-        "students": 8
+        "students": 8,
+        "classes": 3
     },
     {
         "_id": "03",
@@ -33,7 +35,8 @@
         "des": "Indulge in the gentle practice of yoga and experience a soothing flow of movement. Relax your mind, rejuvenate your body, and restore your energy.",
         "price": 30,
         "seats": 25,
-        "students": 12
+        "students": 12,
+        "classes": 3
     },
     {
         "_id": "04",
@@ -45,7 +48,8 @@
         "des": "Dive into the world of chakras and harness their energy through meditation. Explore the subtle body and balance your mind, body, and spirit.",
         "price": 45,
         "seats": 18,
-        "students": 10
+        "students": 10,
+        "classes": 2
     },
     {
         "_id": "05",
@@ -57,7 +61,8 @@
         "des": "Immerse yourself in the dynamic movements of Vinyasa yoga. Build strength, increase flexibility, and experience a flowing sequence of postures.",
         "price": 35,
         "seats": 22,
-        "students": 14
+        "students": 14,
+        "classes": 4
     },
     {
         "_id": "06",
@@ -69,7 +74,8 @@
         "des": "Discover effective meditation techniques to release stress and anxiety. Cultivate a calm and peaceful state of mind for improved well-being.",
         "price": 40,
         "seats": 20,
-        "students": 16
+        "students": 16,
+        "classes": 2
     },
     {
         "_id": "07",
@@ -81,7 +87,8 @@
         "des": "Experience deep relaxation and profound meditation through the practice of Yoga Nidra. Unwind, rejuvenate, and explore inner realms of consciousness.",
         "price": 55,
         "seats": 12,
-        "students": 7
+        "students": 7,
+        "classes": 1
     },
     {
         "_id": "08",
@@ -93,7 +100,8 @@
         "des": "Build a solid foundation in Hatha yoga and learn fundamental postures and breath control techniques. Develop body awareness and inner balance.",
         "price": 30,
         "seats": 25,
-        "students": 18
+        "students": 18,
+        "classes": 1
     },
     {
         "_id": "09",
@@ -105,7 +113,8 @@
         "des": "Experience deep stretching and relaxation in Yin yoga. Enhance flexibility, release tension, and find balance between effort and ease.",
         "price": 35,
         "seats": 20,
-        "students": 13
+        "students": 13,
+        "classes": 2
     },
     {
         "_id": "10",
@@ -117,6 +126,7 @@
         "des": "Connect with nature and practice walking meditation. Immerse yourself in the present moment, appreciate the beauty around you, and find inner peace.",
         "price": 25,
         "seats": 30,
-        "students": 20
+        "students": 20,
+        "classes": 3
     }
 ]

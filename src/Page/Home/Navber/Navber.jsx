@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import logo from "./../../../assets/LotusGrove.png";
 
 const Navber = () => {
@@ -7,17 +7,53 @@ const Navber = () => {
   const navPages = (
     <>
       <li>
-        <Link to={"/"}>Home </Link>
+        <NavLink
+          to="/"
+          className={({ isActive }) =>
+            isActive
+              ? "block font-medium text-[#22bb83] text-lg"
+              : "block font-medium text-lg"
+          }
+        >
+          Home{" "}
+        </NavLink>
       </li>
       <li>
-        <Link to={"/instructor"}>InsTructors </Link>
+        <NavLink
+          to="/instructor"
+          className={({ isActive }) =>
+            isActive
+              ? "block font-medium text-[#22bb83] text-lg"
+              : "block font-medium text-lg"
+          }
+        >
+          Instructors
+        </NavLink>
       </li>
       <li>
-        <Link to={"/classes"}>Classes </Link>
+        <NavLink
+          to="/classes"
+          className={({ isActive }) =>
+            isActive
+              ? "block font-medium text-[#22bb83] text-lg"
+              : "block font-medium text-lg"
+          }
+        >
+          Classes
+        </NavLink>
       </li>
 
       <li>
-        <Link to="/dashboard">Dashboard </Link>
+        <NavLink
+          to="/classes"
+          className={({ isActive }) =>
+            isActive
+              ? "block font-medium text-[#22bb83] text-lg"
+              : "block font-medium text-lg"
+          }
+        >
+          Dashboard
+        </NavLink>
       </li>
     </>
   );

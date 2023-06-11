@@ -11,7 +11,7 @@ const Navber = () => {
           to="/"
           className={({ isActive }) =>
             isActive
-              ? "block font-medium text-[#22bb83] text-lg"
+              ? "block font-medium text-[#dc2e33] outline-white text-lg"
               : "block font-medium text-lg"
           }
         >
@@ -45,10 +45,10 @@ const Navber = () => {
 
       <li>
         <NavLink
-          to="/classes"
+          to="/dashboard"
           className={({ isActive }) =>
             isActive
-              ? "block font-medium text-[#22bb83] text-lg"
+              ? "block font-medium text-[#dc2e33] text-lg"
               : "block font-medium text-lg"
           }
         >
@@ -79,7 +79,7 @@ const Navber = () => {
           </label>
           <ul
             tabIndex={0}
-            className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
+            className="menu bg-success menu-compact border rounded-r-2xl dropdown-content mt-3 p-2 shadow   w-52"
           >
             {navPages}
           </ul>
@@ -91,8 +91,8 @@ const Navber = () => {
           </Link>
         </div>
       </div>
-      <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal px-1">{navPages}</ul>
+      <div className="navbar-center  hidden lg:flex">
+        <ul className="menu  menu-horizontal px-1">{navPages}</ul>
       </div>
 
       {/* user profile  */}

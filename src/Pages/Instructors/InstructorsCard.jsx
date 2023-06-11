@@ -31,7 +31,10 @@ const InstructorsCard = ({ classItem }) => {
           <div className="card-actions mb-4 text-center">
             <div className="">
               <span className="text-red-600 font-bold">{email}</span>
-              <p>Number Of Classes: {classes}</p>
+              <p>
+                Number Of Classes:{" "}
+                <span className="text-red-400 font-bold">{classes}</span>
+              </p>
               <button className="btn btn-outline btn-success  shadow-md  drop-shadow-md text-white hover:drop-shadow-xl  my-1">
                 See Classes
               </button>

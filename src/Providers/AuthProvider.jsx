@@ -22,21 +22,13 @@ const AuthProvider = ({ children }) => {
   //   register new user
   const createUser = (email, password) => {
     setLoading(true);
-    return createUserWithEmailAndPassword(email, password);
+    return createUserWithEmailAndPassword(auth, email, password);
   };
 
   //  sign in with email pass
   const signIn = (email, password) => {
     setLoading(true);
     return signInWithEmailAndPassword(auth, email, password);
-  };
-
-  // profile Updated
-  const upDateProfile = (currentUser, name, photo) => {
-    return updateProfile(currentUser, {
-      displayName: name,
-      photoURL: photo,
-    });
   };
 
   //  google signIn
@@ -55,12 +47,20 @@ const AuthProvider = ({ children }) => {
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
-      console.log("curren user", currentUser);
+      console.log("current user", currentUser);
       setLoading(false);
     });
+
     return unsubscribe;
   }, []);
 
+  // profile Updated
+  const upDateProfile = (currentUser, name, photo) => {
+    return updateProfile(currentUser, {
+      displayName: name,
+      photoURL: photo,
+    });
+  };
   const authInfo = {
     user,
     loading,

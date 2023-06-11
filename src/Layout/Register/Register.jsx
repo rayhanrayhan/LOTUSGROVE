@@ -9,7 +9,7 @@ import { useContext } from "react";
 import { AuthContext } from "../../Providers/AuthProvider";
 
 const Register = () => {
-  const auth = useContext(AuthContext);
+  const { createUser, upDateProfile } = useContext(AuthContext);
 
   const {
     register,
@@ -19,12 +19,16 @@ const Register = () => {
   } = useForm();
 
   const onSubmit = (data) => {
-    const { email, password } = data;
-    auth
-      .createUser(email, password)
-      .then(() => {
+    const { name, photo, email, password } = data;
+    console.log(data);
+    createUser(email, password)
+      .then((res) => {
         console.log("User created successfully");
-        // Additional actions after successful user creation
+        const loggedUser = res.user;
+        // Additional actions
+        upDateProfile(loggedUser, name, photo).then((res) => {
+          alert("Profile Updated");
+        });
       })
       .catch((error) => {
         console.log("Error creating user:", error.message);
@@ -48,7 +52,7 @@ const Register = () => {
   return (
     <div>
       <Helmet>
-        <title>LOTUSGROVE || REGISTER</title>
+        <title>LOTUSGROVE || REGISTER </title>
       </Helmet>
       <div className="hero min-h-screen bg-base-200 pt-20">
         <div className="md:flex justify-around items-center mx-2 md:mx-16">

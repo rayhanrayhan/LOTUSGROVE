@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import logo from "./../../../assets/LotusGrove.png";
+import { useContext } from "react";
+import { AuthContext } from "../../../Providers/AuthProvider";
 
 const Navber = () => {
-  const [user, setUser] = useState(false);
+  const { user, logOut } = useContext(AuthContext);
   const navPages = (
     <>
       <li>
@@ -102,14 +104,12 @@ const Navber = () => {
           <button className="btn btn-ghost btn-circle">
             <img
               className="w-10 h-10 rounded-full  "
-              // src={user?.displayName}
-              src={logo}
+              src={user?.photoURL}
               alt=""
             />
           </button>
-          <h1 className="absolute -bottom-10 bg-white  px-6 py-2 rounded-lg opacity-0 invisible shadow-md right-0 group-hover:opacity-100 group-hover:visible duration-300">
-            {/* {user?.displayName} */}
-            Rayhan khan
+          <h1 className="absolute -bottom-10 bg-slate-700   px-6 py-2 rounded-lg opacity-0 invisible shadow-md right-0 group-hover:opacity-100 group-hover:visible duration-300">
+            {user?.displayName}
           </h1>
         </div>
 
@@ -117,7 +117,7 @@ const Navber = () => {
         <ul>
           {user ? (
             <li>
-              <button>Logout</button>
+              <button onClick={() => logOut()}>Logout</button>
             </li>
           ) : (
             <li>

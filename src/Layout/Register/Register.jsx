@@ -5,8 +5,12 @@ import registrationAnimation from "./../../../public/registrationAnimation.json"
 import { FiEye, FiEyeOff } from "react-icons/fi";
 import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
+import { useContext } from "react";
+import { AuthContext } from "../../Providers/AuthProvider";
 
 const Register = () => {
+  const auth = useContext(AuthContext);
+
   const {
     register,
     handleSubmit,
@@ -14,7 +18,19 @@ const Register = () => {
     watch,
   } = useForm();
 
-  const onSubmit = (data) => console.log(data);
+  const onSubmit = (data) => {
+    const { email, password } = data;
+    auth
+      .createUser(email, password)
+      .then(() => {
+        console.log("User created successfully");
+        // Additional actions after successful user creation
+      })
+      .catch((error) => {
+        console.log("Error creating user:", error.message);
+        // Handle error
+      });
+  };
 
   const [passwordVisible, setPasswordVisible] = useState(false);
   const [confirmPasswordVisible, setConfirmPasswordVisible] = useState(false);

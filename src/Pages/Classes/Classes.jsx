@@ -8,7 +8,7 @@ const Classes = () => {
   const [popularClass, setPopularClass] = useState([]);
 
   useEffect(() => {
-    fetch("./classes.json")
+    fetch("http://localhost:5000/classes")
       .then((res) => res.json())
       .then((data) => {
         setPopularClass(data);

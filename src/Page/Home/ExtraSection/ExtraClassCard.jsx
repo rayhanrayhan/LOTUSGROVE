@@ -1,27 +1,38 @@
-import React from "react";
-import AOS from "aos";
+import React, { useState } from "react";
 import "aos/dist/aos.css";
-import { useEffect } from "react";
 
 const ExtraClassCard = ({ classes }) => {
   const { image, name, description } = classes;
-  useEffect(() => {
-    AOS.init({ duration: 800 });
-  }, []);
+  const [showFullDescription, setShowFullDescription] = useState(false);
+
+  const toggleDescription = () => {
+    setShowFullDescription(!showFullDescription);
+  };
+
   return (
-    <div className="my-6 flex justify-center ">
-      <div
-        className="card border  border-[#22bb83]  bg-base-100 md:shadow-xl md:hover:shadow-xl md:hover:drop-shadow-2xl "
-        data-aos="fade-up"
-        data-aos-duration="500"
-      >
-        <div className="card w-96 bg-base-100 shadow-xl">
-          <figure className="px-10 pt-10">
-            <img src={image} alt="image" className="rounded-xl " />
+    <div className="my-6 flex justify-center">
+      <div className="w-full md:w-96">
+        <div className="card bg-base-100 border border-[#22bb83] shadow-xl hover:shadow-2xl">
+          <figure className="px-6 pt-6 md:px-10 md:pt-10">
+            <img src={image} alt="image" className="rounded-xl w-full" />
           </figure>
-          <div className="card-body items-center text-center">
-            <h2 className="card-title uppercase font-bold">{name}</h2>
-            <p>{description}</p>
+          <div className="card-body items-center text-center px-6 py-4 md:px-10">
+            <h2 className="card-title uppercase font-bold text-xl md:text-2xl">
+              {name}
+            </h2>
+            <p>
+              {showFullDescription
+                ? description
+                : `${description.slice(0, 30)}...`}
+              {description.length > 30 && (
+                <button
+                  className="text-blue-500 hover:underline"
+                  onClick={toggleDescription}
+                >
+                  {showFullDescription ? "See Less" : "See More"}
+                </button>
+              )}
+            </p>
           </div>
         </div>
       </div>

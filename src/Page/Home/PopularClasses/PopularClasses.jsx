@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from "react";
+import { useEffect } from "react";
+import { useState } from "react";
 import PopularClassCard from "./PopularClassCard";
 
 const PopularClasses = () => {
@@ -24,11 +25,12 @@ const PopularClasses = () => {
       </div>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 justify-center">
         {currentCards.map((classItem) => (
-          <PopularClassCard key={classItem._id} classItem={classItem} />
+          <div className="flex justify-center" key={classItem._id}>
+            <PopularClassCard classItem={classItem} />
+          </div>
         ))}
       </div>
     </div>
   );
 };
-
 export default PopularClasses;

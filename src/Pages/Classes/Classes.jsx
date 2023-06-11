@@ -1,10 +1,12 @@
-import React, { useEffect, useState } from "react";
+import { useEffect } from "react";
+import { useState } from "react";
 import ClassesAllCard from "./ClassesAllCard";
-import KeenSlider from "../KeenSlider/KeenSlider";
 import { Helmet } from "react-helmet-async";
+import KeenSlider from "../KeenSlider/KeenSlider";
 
 const Classes = () => {
   const [popularClass, setPopularClass] = useState([]);
+
   useEffect(() => {
     fetch("./classes.json")
       .then((res) => res.json())
@@ -14,7 +16,7 @@ const Classes = () => {
   }, []);
 
   return (
-    <div className="container mx-auto  border">
+    <div className="container mx-auto border">
       <Helmet>
         <title>LOTUSGROVE || OUR CLASSES </title>
       </Helmet>
@@ -22,7 +24,9 @@ const Classes = () => {
       <div className="px-4">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 justify-center">
           {popularClass.map((classItem) => (
-            <ClassesAllCard key={classItem._id} classItem={classItem} />
+            <div className="flex justify-center" key={classItem._id}>
+              <ClassesAllCard classItem={classItem} />
+            </div>
           ))}
         </div>
       </div>

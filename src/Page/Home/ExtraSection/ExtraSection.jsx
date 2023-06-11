@@ -14,7 +14,7 @@ const ExtraSection = () => {
 
   return (
     <div className="container mx-auto px-4 border">
-      <div className="text-center my-4">
+      <div className="text-center py-8">
         <h2 className="text-xl md:text-3xl mb-2 font-bold">
           Your Healthy Choices
         </h2>
@@ -25,7 +25,7 @@ const ExtraSection = () => {
           prioritize my well-being.
         </p>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-3  gap-4 justify-center">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 justify-center">
         {extraClass.map((classes) => (
           <ExtraClassCard key={classes._id} classes={classes} />
         ))}

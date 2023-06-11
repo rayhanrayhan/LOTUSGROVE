@@ -5,7 +5,7 @@ const PopularInstractor = () => {
   const [popularInstractorClass, setPopularInstractorClass] = useState([]);
 
   useEffect(() => {
-    fetch("./public/classes.json")
+    fetch("http://localhost:5000/classes")
       .then((res) => res.json())
       .then((data) => {
         // Sort classes based on the number of students

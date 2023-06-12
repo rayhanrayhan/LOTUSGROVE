@@ -19,10 +19,6 @@ const ClassesAllCard = ({ classItem }) => {
     setShowFullDescription(!showFullDescription);
   };
 
-  const checkIfClassSelected = (classId) => {
-    return selectedClassIds.includes(classId);
-  };
-
   const handleSelectedClass = (item) => {
     const selectedClasses = {
       email: user.email,
@@ -37,34 +33,28 @@ const ClassesAllCard = ({ classItem }) => {
       return;
     }
 
-    const isExists = checkIfClassSelected(selectedClasses.classId);
-
-    if (isExists) {
-      return toast.warning("This class is already selected.", {
-        position: "top-center",
-        autoClose: 3000,
-        closeOnClick: true,
-        theme: "light",
-      });
-    }
-
     axios
       .post("http://localhost:5000/selectedClass", selectedClasses)
       .then((data) => {
         console.log(data.data);
-
-        setSelectedClassIds([...selectedClassIds, selectedClasses.classId]);
-
-        toast.success("🦄 Class Selected", {
-          position: "top-center",
-          autoClose: 3000,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-          progress: undefined,
-          theme: "light",
-        });
+        if (data.data.insertedId) {
+          toast.success("🦄 Class Selected", {
+            position: "top-center",
+            autoClose: 3000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+          });
+        } else {
+          toast.warning(" Already Added is Dashboard ", {
+            position: "top-center",
+            autoClose: 3000,
+            theme: "light",
+          });
+        }
       });
   };
 

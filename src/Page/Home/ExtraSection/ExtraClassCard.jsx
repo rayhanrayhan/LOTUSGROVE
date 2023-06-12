@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import AOS from "aos";
 import "aos/dist/aos.css";
 
 const ExtraClassCard = ({ classes }) => {
@@ -8,9 +9,20 @@ const ExtraClassCard = ({ classes }) => {
   const toggleDescription = () => {
     setShowFullDescription(!showFullDescription);
   };
+  useEffect(() => {
+    AOS.init({ duration: 800 });
+  }, []);
+
+  useEffect(() => {
+    AOS.refresh();
+  });
 
   return (
-    <div className="my-6 flex justify-center">
+    <div
+      className="my-6 flex justify-center"
+      data-aos="zoom-in-up"
+      data-aos-duration="800"
+    >
       <div className="w-full md:w-96">
         <div className="card bg-base-100 border border-[#22bb83] shadow-xl hover:shadow-2xl">
           <figure className="px-6 pt-6 md:px-10 md:pt-10">

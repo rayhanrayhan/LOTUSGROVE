@@ -5,7 +5,7 @@ const ExtraSection = () => {
   const [extraClass, setExtraClass] = useState([]);
 
   useEffect(() => {
-    fetch("./extra.json")
+    fetch("http://localhost:5000/extra")
       .then((res) => res.json())
       .then((data) => {
         setExtraClass(data);

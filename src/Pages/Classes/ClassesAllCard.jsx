@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import { useContext } from "react";
 import { AuthContext } from "../../Providers/AuthProvider";
 import axios from "axios";
@@ -12,9 +13,14 @@ const ClassesAllCard = ({ classItem }) => {
 
   const { user } = useContext(AuthContext);
   const [showFullDescription, setShowFullDescription] = useState(false);
+  const [selectedClassIds, setSelectedClassIds] = useState([]);
 
   const toggleDescription = () => {
     setShowFullDescription(!showFullDescription);
+  };
+
+  const checkIfClassSelected = (classId) => {
+    return selectedClassIds.includes(classId);
   };
 
   const handleSelectedClass = (item) => {
@@ -31,19 +37,41 @@ const ClassesAllCard = ({ classItem }) => {
       return;
     }
 
+    const isExists = checkIfClassSelected(selectedClasses.classId);
+
+    if (isExists) {
+      return toast.warning("This class is already selected.", {
+        position: "top-center",
+        autoClose: 3000,
+        closeOnClick: true,
+        theme: "light",
+      });
+    }
+
     axios
       .post("http://localhost:5000/selectedClass", selectedClasses)
       .then((data) => {
         console.log(data.data);
+
+        setSelectedClassIds([...selectedClassIds, selectedClasses.classId]);
+
+        toast.success("🦄 Class Selected", {
+          position: "top-center",
+          autoClose: 3000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+        });
       });
   };
-  useEffect(() => {
-    AOS.init({ duration: 800 });
-  }, []);
 
   useEffect(() => {
+    AOS.init({ duration: 800 });
     AOS.refresh();
-  });
+  }, []);
 
   const seatLeft = seats - students;
   const isDisabled = seats === 0;

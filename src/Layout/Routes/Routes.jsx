@@ -6,6 +6,7 @@ import Register from "../Register/Register";
 import Instructors from "../../Pages/Instructors/Instructors";
 import Classes from "../../Pages/Classes/Classes";
 import Error from "../../Pages/Error/Error";
+import Dashboard from "../../Pages/Dashboard/Dashboard";
 
 export const router = createBrowserRouter([
   {
@@ -33,6 +34,10 @@ export const router = createBrowserRouter([
       {
         path: "classes",
         element: <Classes></Classes>,
+      },
+      {
+        path: "dashboard",
+        element: <Dashboard></Dashboard>,
       },
     ],
   },

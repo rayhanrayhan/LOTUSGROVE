@@ -9,6 +9,7 @@ import { useQuery } from "@tanstack/react-query";
 import MyClassCard from "../../Components/MyClassCard";
 import { useContext } from "react";
 import { AuthContext } from "../../Providers/AuthProvider";
+import { useNavigate } from "react-router-dom";
 
 const MyClasses = () => {
   const { user } = useContext(AuthContext);
@@ -26,6 +27,13 @@ const MyClasses = () => {
       return res.data;
     },
   });
+
+  const navigate = useNavigate();
+  const handleEdit = (id) => {
+    // Implement your edit logic here, e.g., navigate to the edit page or open a modal
+    console.log("Editing post with ID:", id);
+    navigate(`/dashboard/addClass?postId=${id}`);
+  };
 
   return (
     <div className="container mx-auto border">
@@ -51,7 +59,12 @@ const MyClasses = () => {
                 </thead>
                 <tbody>
                   {classData.map((data, index) => (
-                    <MyClassCard key={data._id} data={data} index={index} />
+                    <MyClassCard
+                      key={data._id}
+                      data={data}
+                      index={index}
+                      handleEdit={() => handleEdit(data._id)}
+                    />
                   ))}
                 </tbody>
               </table>

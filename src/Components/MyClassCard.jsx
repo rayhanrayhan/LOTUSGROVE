@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { MdPayment } from "react-icons/md";
 import { AiFillEdit } from "react-icons/ai";
-const MyClassCard = ({ data, index }) => {
+const MyClassCard = ({ data, index, handleEdit }) => {
   const { _id, email, classId, name, status, image, price, seats } = data;
 
   const isEvenRow = index % 2 === 0;
@@ -19,7 +19,7 @@ const MyClassCard = ({ data, index }) => {
       <td className="px-4 py-2 text-center">FEEDBACK</td>
       <td className="px-4 py-2 text-center">
         <div className=" ">
-          <button className="btn btn-circle ">
+          <button onClick={() => handleEdit(_id)} className="btn btn-circle ">
             <AiFillEdit />
           </button>
         </div>

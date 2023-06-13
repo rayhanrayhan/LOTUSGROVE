@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { MdPayment } from "react-icons/md";
 import { AiOutlineDelete } from "react-icons/ai";
 
-const DashBoardData = ({ data, handleDelete, index }) => {
+const SelectedClassesData = ({ data, handleDelete, index }) => {
   const { _id, email, classId, name, image, price, seats } = data;
 
   const isEvenRow = index % 2 === 0;
@@ -33,4 +33,4 @@ const DashBoardData = ({ data, handleDelete, index }) => {
     </tr>
   );
 };
-export default DashBoardData;
+export default SelectedClassesData;

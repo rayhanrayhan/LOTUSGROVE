@@ -3,13 +3,14 @@ import { useEffect } from "react";
 import { useState } from "react";
 import { Helmet } from "react-helmet-async";
 import KeenSlider from "../KeenSlider/KeenSlider";
-import DashBoardData from "./DashBoardData";
+
 import LeftBar from "./LeftBar";
 import axios, { Axios } from "axios";
 import { toast } from "react-toastify";
 import { useQuery } from "@tanstack/react-query";
+import SelectedClassesData from "./SelectedClassesData";
 
-const Dashboard = () => {
+const SelectedClasses = () => {
   const {
     data: classData = [],
     isLoading: loading,
@@ -47,10 +48,7 @@ const Dashboard = () => {
       </Helmet>
       <KeenSlider keenTitle="DASHBOArd" />
       <div className="px-4">
-        <div className="grid my-6 grid-cols-1 md:grid-cols-5 gap-4">
-          <div className="col-span-1 md:col-span-2">
-            <LeftBar />
-          </div>
+        <div className="grid my-6  gap-4">
           <div className="col-span-1 md:col-span-3">
             <div className="font-bold  text-2xl text-success outline-3  text-center">
               MY SELECTION
@@ -70,7 +68,7 @@ const Dashboard = () => {
                 </thead>
                 <tbody>
                   {classData.map((data, index) => (
-                    <DashBoardData
+                    <SelectedClassesData
                       key={data._id}
                       data={data}
                       handleDelete={handleDelete}
@@ -86,5 +84,4 @@ const Dashboard = () => {
     </div>
   );
 };
-
-export default Dashboard;
+export default SelectedClasses;

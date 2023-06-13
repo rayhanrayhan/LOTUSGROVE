@@ -13,6 +13,7 @@ import MyClasses from "../../Pages/Dashboard/MyClasses";
 import AddAClass from "../../Pages/Dashboard/AddAClass";
 import ManageClasses from "../../Pages/Dashboard/ManageClasses";
 import ManageUsers from "../../Pages/Dashboard/ManageUsers";
+import Feedback from "../../Pages/Dashboard/Feedback";
 export const router = createBrowserRouter([
   {
     path: "/",
@@ -38,6 +39,10 @@ export const router = createBrowserRouter([
       {
         path: "classes",
         element: <Classes></Classes>,
+      },
+      {
+        path: "feedback/:id",
+        element: <Feedback></Feedback>,
       },
     ],
   },

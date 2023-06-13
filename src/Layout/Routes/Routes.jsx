@@ -8,10 +8,14 @@ import Classes from "../../Pages/Classes/Classes";
 import Error from "../../Pages/Error/Error";
 import Dashboard from "../Dashboard";
 import SelectedClasses from "../../Pages/Dashboard/SelectedClasses";
+import EnrolledClasses from "../../Pages/Dashboard/EnrolledClasses";
+import MyClasses from "../../Pages/Dashboard/MyClasses";
+import AddAClass from "../../Pages/Dashboard/AddAClass";
+import ManageClasses from "../../Pages/Dashboard/ManageClasses";
+import ManageUsers from "../../Pages/Dashboard/ManageUsers";
 export const router = createBrowserRouter([
   {
     path: "/",
-    errorElement: <Error></Error>,
     element: <Main></Main>,
 
     children: [
@@ -45,6 +49,30 @@ export const router = createBrowserRouter([
         path: "selectedClass",
         element: <SelectedClasses></SelectedClasses>,
       },
+      {
+        path: "enrolledClass",
+        element: <EnrolledClasses></EnrolledClasses>,
+      },
+      {
+        path: "myClasses",
+        element: <MyClasses></MyClasses>,
+      },
+      {
+        path: "addClass",
+        element: <AddAClass></AddAClass>,
+      },
+      {
+        path: "manegeClasses",
+        element: <ManageClasses></ManageClasses>,
+      },
+      {
+        path: "manageUsers",
+        element: <ManageUsers></ManageUsers>,
+      },
     ],
   },
+  {
+    path: '*',
+    element: <Error></Error>
+  }
 ]);

@@ -4,7 +4,6 @@ import { useState } from "react";
 import { Helmet } from "react-helmet-async";
 import KeenSlider from "../KeenSlider/KeenSlider";
 
-import LeftBar from "./LeftBar";
 import axios, { Axios } from "axios";
 import { toast } from "react-toastify";
 import { useQuery } from "@tanstack/react-query";

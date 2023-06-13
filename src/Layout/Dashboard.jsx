@@ -4,15 +4,32 @@ import { Link, Outlet } from "react-router-dom";
 const Dashboard = () => {
   return (
     <div className="flex items-center gap-5">
-      <div className="w-80 h-screen bg-[#f2f2f2]  ">
+      <div className="w-72 h-screen bg-[#f2f2f2]  ">
         <nav>
-          <ul className="menu p-4 w-80 h-full bg-base-200 text-base-content">
+          <ul className="pl-10 pt-10 flex flex-col gap-4">
             {/* Sidebar content here */}
             <li>
               <Link to="/dashboard/selectedClass">Selected Class</Link>
             </li>
             <li>
-              <Link to="/dashboard/enrolledClass">Enroll Class</Link>
+              <Link to="/dashboard/enrolledClass">Enrolled Classes</Link>
+            </li>
+            <li>
+              <Link to="/dashboard/myClasses">My Classes</Link>
+            </li>
+            <li>
+              <Link to="/dashboard/addClass">Add a Class Classes</Link>
+            </li>
+            <li>
+              <Link to="/dashboard/manegeClasses">Manage Classes</Link>
+            </li>
+            <li>
+              <Link to="/dashboard/manageUsers">Manage Users</Link>
+            </li>
+            <li>
+              <Link to="/">
+                Home
+              </Link>
             </li>
           </ul>
         </nav>

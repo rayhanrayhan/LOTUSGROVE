@@ -45,13 +45,10 @@ const SelectedClasses = () => {
       <Helmet>
         <title>LOTUSGROVE || DASHBOARD</title>
       </Helmet>
-      <KeenSlider keenTitle="DASHBOArd" />
+      <KeenSlider keenTitle="MY Selected Classes" />
       <div className="px-4">
         <div className="grid my-6  gap-4">
           <div className="col-span-1 md:col-span-3">
-            <div className="font-bold  text-2xl text-success outline-3  text-center">
-              MY SELECTION
-            </div>
             <div className="overflow-x-auto">
               <table className="w-full">
                 <thead>

@@ -9,8 +9,16 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 
 const ClassesAllCard = ({ classItem }) => {
-  const { image, price, instructorImage, des, seats, name, students } =
-    classItem;
+  const {
+    image,
+    price,
+    instructorImage,
+    instructor,
+    des,
+    seats,
+    name,
+    students,
+  } = classItem;
 
   const { user } = useContext(AuthContext);
   const [showFullDescription, setShowFullDescription] = useState(false);
@@ -92,6 +100,12 @@ const ClassesAllCard = ({ classItem }) => {
         </figure>
         <div className="card-body">
           <h2 className="card-title">{name}</h2>
+          <p className="">
+            by{" "}
+            <span className="text-success font-bold outline-2 outline-black">
+              {instructor}
+            </span>
+          </p>
           <p>
             {showFullDescription ? des : `${des.slice(0, 30)}...`}
             {des.length > 30 && (

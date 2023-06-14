@@ -1,7 +1,9 @@
 import React, { useContext } from "react";
-import { BiSelectMultiple } from "react-icons/Bi";
-import { GiShoppingBag } from "react-icons/Gi";
+import { BiBookAdd, BiSelectMultiple, BiUserCircle } from "react-icons/Bi";
+import { GiShoppingBag, GiNotebook } from "react-icons/Gi";
 import { AiFillHome } from "react-icons/Ai";
+import { FiLogOut, FiBookOpen } from "react-icons/fi";
+
 import {
   Link,
   Navigate,
@@ -38,20 +40,24 @@ const Dashboard = () => {
             )}
             {loggedUsers?.role === "instructor" && (
               <>
-                <li>
+                <li className="flex items-center gap-2 py-2 px-2 hover:rounded-md hover:bg-gray-300">
+                  <FiBookOpen />
                   <Link to="/dashboard/myClasses">My Classes</Link>
                 </li>
-                <li>
+                <li className="flex items-center gap-2 py-2 px-2 hover:rounded-md hover:bg-gray-300">
+                  <BiBookAdd />
                   <Link to="/dashboard/addClass">Add a Class</Link>
                 </li>
               </>
             )}
             {loggedUsers?.role === "admin" && (
               <>
-                <li>
+                <li className="flex items-center gap-2 py-2 px-2 hover:rounded-md hover:bg-gray-300">
+                  <GiNotebook />
                   <Link to="/dashboard/manegeClasses">Manage Classes</Link>
                 </li>
-                <li>
+                <li className="flex items-center gap-2 py-2 px-2 hover:rounded-md hover:bg-gray-300">
+                  <BiUserCircle />
                   <Link to="/dashboard/manageUsers">Manage Users</Link>
                 </li>
               </>
@@ -62,7 +68,8 @@ const Dashboard = () => {
               <Link to="/">Back to Home</Link>
             </li>
 
-            <li>
+            <li className="flex items-center gap-2 py-2 px-2 hover:rounded-md hover:bg-gray-300">
+              <FiLogOut />
               <button onClick={() => logOut(navigate(from, { replace: true }))}>
                 LogOut
               </button>

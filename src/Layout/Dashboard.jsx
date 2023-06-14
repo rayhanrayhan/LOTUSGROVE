@@ -1,11 +1,20 @@
 import React, { useContext } from "react";
-import { Link, Outlet } from "react-router-dom";
+import {
+  Link,
+  Navigate,
+  Outlet,
+  useLocation,
+  useNavigate,
+} from "react-router-dom";
 import useLoggedUsers from "../hooks/useLoggedUsers";
 import { AuthContext } from "../Providers/AuthProvider";
 
 const Dashboard = () => {
   const [loggedUsers] = useLoggedUsers();
   const { logOut } = useContext(AuthContext);
+  const navigate = useNavigate();
+  const location = useLocation();
+  const from = location.state?.from?.pathname || "/";
   return (
     <div className="flex items-start gap-5">
       <div className="w-72 h-screen bg-[#f2f2f2]  ">
@@ -48,7 +57,9 @@ const Dashboard = () => {
             </li>
 
             <li>
-              <button onClick={() => logOut()}>LogOut</button>
+              <button onClick={() => logOut(navigate(from, { replace: true }))}>
+                LogOut
+              </button>
             </li>
           </ul>
         </nav>

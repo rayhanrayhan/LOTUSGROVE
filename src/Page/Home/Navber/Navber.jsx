@@ -48,7 +48,7 @@ const Navber = () => {
       </li>
 
       <li>
-        {loggedUsers?.role === "student" &&
+        {loggedUsers?.role === "student" && (
           <NavLink
             to="/dashboard/selectedClass"
             className={({ isActive }) =>
@@ -59,8 +59,8 @@ const Navber = () => {
           >
             Dashboard
           </NavLink>
-        }
-        {loggedUsers?.role === "instructor" &&
+        )}
+        {loggedUsers?.role === "instructor" && (
           <NavLink
             to="/dashboard/myClasses"
             className={({ isActive }) =>
@@ -71,8 +71,8 @@ const Navber = () => {
           >
             Dashboard
           </NavLink>
-        }
-        {loggedUsers?.role === "admin" &&
+        )}
+        {loggedUsers?.role === "admin" && (
           <NavLink
             to="/dashboard/manegeClasses"
             className={({ isActive }) =>
@@ -83,7 +83,7 @@ const Navber = () => {
           >
             Dashboard
           </NavLink>
-        }
+        )}
       </li>
     </>
   );
@@ -115,7 +115,10 @@ const Navber = () => {
           </ul>
         </div>
         <div className="flex">
-          <img className="w-16 h-full" src={logo} alt="" />
+          <Link to={"/"}>
+            {" "}
+            <img className="w-16 h-full" src={logo} alt="" />
+          </Link>
           <Link to={"/"} className="btn btn-ghost normal-case text-xl">
             LotusGrove
           </Link>

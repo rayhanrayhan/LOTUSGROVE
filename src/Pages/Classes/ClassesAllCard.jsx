@@ -6,6 +6,7 @@ import "react-toastify/dist/ReactToastify.css";
 import { useContext } from "react";
 import { AuthContext } from "../../Providers/AuthProvider";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 const ClassesAllCard = ({ classItem }) => {
   const { image, price, instructorImage, des, seats, name, students } =
@@ -110,13 +111,22 @@ const ClassesAllCard = ({ classItem }) => {
             </div>
           </div>
           <div className="text-center mt-1">
-            <button
-              className="btn btn-outline btn-success shadow-md drop-shadow-md text-white hover:drop-shadow-xl"
-              onClick={() => handleSelectedClass(classItem)}
-              disabled={isDisabled}
-            >
-              Select Class
-            </button>
+            {user ? (
+              <button
+                className="btn btn-outline btn-success shadow-md drop-shadow-md text-white hover:drop-shadow-xl"
+                onClick={() => handleSelectedClass(classItem)}
+                disabled={isDisabled}
+              >
+                Select Class
+              </button>
+            ) : (
+              <Link
+                to="/login"
+                className="btn btn-outline btn-success shadow-md drop-shadow-md text-white hover:drop-shadow-xl"
+              >
+                Select Class
+              </Link>
+            )}
           </div>
         </div>
       </div>

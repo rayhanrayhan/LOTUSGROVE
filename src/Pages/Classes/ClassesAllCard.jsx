@@ -21,6 +21,15 @@ const ClassesAllCard = ({ classItem }) => {
   };
 
   const handleSelectedClass = (item) => {
+    if (selectedClassIds.includes(item._id)) {
+      toast.warning("Already Added to Dashboard", {
+        position: "top-center",
+        autoClose: 3000,
+        theme: "light",
+      });
+      return;
+    }
+
     const selectedClasses = {
       email: user.email,
       classId: item._id,
@@ -42,6 +51,7 @@ const ClassesAllCard = ({ classItem }) => {
       .then((data) => {
         console.log(data.data);
         if (data.data.insertedId) {
+          setSelectedClassIds((prevIds) => [...prevIds, item._id]);
           toast.success("🦄 Class Selected", {
             position: "top-center",
             autoClose: 3000,
@@ -53,7 +63,7 @@ const ClassesAllCard = ({ classItem }) => {
             theme: "light",
           });
         } else {
-          toast.warning(" Already Added is Dashboard ", {
+          toast.warning("Already Added to Dashboard", {
             position: "top-center",
             autoClose: 3000,
             theme: "light",
@@ -68,7 +78,7 @@ const ClassesAllCard = ({ classItem }) => {
   }, []);
 
   const seatLeft = seats - students;
-  const isDisabled = seats === 0;
+  const isDisabled = seats === 0 || selectedClassIds.includes(classItem._id);
 
   return (
     <div

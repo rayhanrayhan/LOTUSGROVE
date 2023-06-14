@@ -1,4 +1,7 @@
 import React, { useContext } from "react";
+import { BiSelectMultiple } from "react-icons/Bi";
+import { GiShoppingBag } from "react-icons/Gi";
+import { AiFillHome } from "react-icons/Ai";
 import {
   Link,
   Navigate,
@@ -23,10 +26,12 @@ const Dashboard = () => {
             {/* Sidebar content here */}
             {loggedUsers?.role === "student" && (
               <>
-                <li>
+                <li className="flex items-center gap-2 py-2 px-2 hover:rounded-md hover:bg-gray-300">
+                  <BiSelectMultiple />
                   <Link to="/dashboard/selectedClass">Selected Class</Link>
                 </li>
-                <li>
+                <li className="flex items-center gap-2 py-2 px-2 hover:rounded-md hover:bg-gray-300">
+                  <GiShoppingBag />
                   <Link to="/dashboard/enrolledClass">Enrolled Classes</Link>
                 </li>
               </>
@@ -52,7 +57,8 @@ const Dashboard = () => {
               </>
             )}
 
-            <li>
+            <li className="flex items-center gap-2 py-2 px-2 hover:rounded-md hover:bg-gray-300">
+              <AiFillHome />
               <Link to="/">Back to Home</Link>
             </li>
 

@@ -13,7 +13,18 @@ const Main = () => {
   const { loading, user } = useContext(AuthContext);
   let content;
   if (loading) {
-    content = <DotLoader color="#36d7b7" />;
+    content = (
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          height: "100vh",
+        }}
+      >
+        <DotLoader color="#36d7b7" />
+      </div>
+    );
   } else if (!loading) {
     content = <Outlet></Outlet>;
   }

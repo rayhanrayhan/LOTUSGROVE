@@ -3,7 +3,7 @@ import { Helmet } from "react-helmet-async";
 import Lottie from "lottie-react";
 import registrationAnimation from "./../../../public/registrationAnimation.json";
 import { FiEye, FiEyeOff } from "react-icons/fi";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { useContext } from "react";
 import { AuthContext } from "../../Providers/AuthProvider";
@@ -11,6 +11,10 @@ import axios from "axios";
 
 const Register = () => {
   const { createUser, upDateProfile } = useContext(AuthContext);
+
+  const navigate = useNavigate();
+  const location = useLocation();
+  const from = location.state?.from?.pathname || "/";
 
   const {
     register,
@@ -25,6 +29,7 @@ const Register = () => {
     createUser(email, password)
       .then((res) => {
         const loggedUser = res.user;
+        navigate(from, { replace: true });
         // Additional actions
         upDateProfile(loggedUser, name, photo).then((res) => {
           axios

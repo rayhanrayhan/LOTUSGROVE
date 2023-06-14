@@ -3,7 +3,7 @@ import { Helmet } from "react-helmet-async";
 import Lottie from "lottie-react";
 import lottiAnimation from "./../../../public/logsign.json";
 import { FiEye, FiEyeOff } from "react-icons/fi";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import {
   loadCaptchaEnginge,
   LoadCanvasTemplate,
@@ -18,6 +18,9 @@ const Login = () => {
 
   const { signIn, googleSignIn, setLoading } = useContext(AuthContext);
   const [error, setError] = useState("");
+  const navigate = useNavigate();
+  const location = useLocation();
+  const from = location.state?.from?.pathname || "/";
 
   useEffect(() => {
     loadCaptchaEnginge(6);
@@ -33,6 +36,7 @@ const Login = () => {
     googleSignIn()
       .then((res) => {
         const user = res.user;
+        navigate(from, { replace: true });
         const newUser = {
           name: user?.displayName,
           email: user?.email,
@@ -71,6 +75,7 @@ const Login = () => {
 
     signIn(email, password)
       .then((result) => {
+        navigate(from, { replace: true });
         const user = result.user;
         form.reset();
         console.log(user);

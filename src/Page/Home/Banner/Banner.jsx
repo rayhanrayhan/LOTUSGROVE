@@ -7,7 +7,7 @@ import banner3 from "./../../../assets/banner3.png";
 import banner4 from "./../../../assets/banner4.png";
 import { Carousel } from "react-responsive-carousel";
 import { Link } from "react-router-dom";
-import { Slide } from "react-awesome-reveal";
+import { Fade, Slide } from "react-awesome-reveal";
 
 const Banner = () => {
   const onChange = (index) => {
@@ -57,9 +57,11 @@ const Banner = () => {
               </p>
             </Slide>
             <Link to="register">
-              <button className="my-5 py-1 md:py-3 px-3 md:px-7 rounded-lg md:text-base text-xs text-white font-semibold md:font-extrabold bg-gradient-to-r from-[#7E90FE]">
-                Join With Us
-              </button>
+              <Fade duration={3000}>
+                <button className="my-5 py-1 md:py-3 px-3 md:px-7 rounded-lg md:text-base text-xs text-white font-semibold md:font-extrabold bg-gradient-to-r from-[#7E90FE]">
+                  Join With Us
+                </button>
+              </Fade>
             </Link>
           </div>
         </div>
@@ -82,9 +84,11 @@ const Banner = () => {
               </p>
             </Slide>
             <Link to="register">
-              <button className="my-5 py-1 md:py-3 px-3 md:px-7 rounded-lg md:text-base text-xs text-white font-semibold md:font-extrabold bg-gradient-to-r from-[#7E90FE]">
-                Join With Us
-              </button>
+              <Fade duration={3000}>
+                <button className="my-5 py-1 md:py-3 px-3 md:px-7 rounded-lg md:text-base text-xs text-white font-semibold md:font-extrabold bg-gradient-to-r from-[#7E90FE]">
+                  Join With Us
+                </button>
+              </Fade>
             </Link>
           </div>
         </div>
@@ -106,9 +110,11 @@ const Banner = () => {
               </p>
             </Slide>
             <Link to="register">
-              <button className="my-5 py-1 md:py-3 px-3 md:px-7 rounded-lg md:text-base text-xs text-white font-bold md:font-extrabold bg-gradient-to-r from-[#7E90FE]">
-                Join With Us
-              </button>
+              <Fade duration={3000}>
+                <button className="my-5 py-1 md:py-3 px-3 md:px-7 rounded-lg md:text-base text-xs text-white font-bold md:font-extrabold bg-gradient-to-r from-[#7E90FE]">
+                  Join With Us
+                </button>
+              </Fade>
             </Link>
           </div>
         </div>
@@ -130,9 +136,11 @@ const Banner = () => {
               </p>
             </Slide>
             <Link to="register">
-              <button className="my-5 py-1 md:py-3 px-3 md:px-7 rounded-lg md:text-base text-xs text-white font-bold md:font-extrabold bg-gradient-to-r from-[#7E90FE]">
-                Join With Us
-              </button>
+              <Fade duration={3000}>
+                <button className="my-5 py-1 md:py-3 px-3 md:px-7 rounded-lg md:text-base text-xs text-white font-bold md:font-extrabold bg-gradient-to-r from-[#7E90FE]">
+                  Join With Us
+                </button>
+              </Fade>
             </Link>
           </div>
         </div>

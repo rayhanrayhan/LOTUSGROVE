@@ -20,7 +20,8 @@ const Main = () => {
   return (
     <div>
       <Navber></Navber>
-      <Outlet></Outlet>
+      {/* <Outlet></Outlet> */}
+      {content}
       <Footer></Footer>
       <ToastContainer />
     </div>

@@ -8,7 +8,7 @@ const Classes = () => {
   const [popularClass, setPopularClass] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/classes")
+    fetch("https://lotusgrove-server-site.vercel.app/classes")
       .then((res) => res.json())
       .then((data) => {
         setPopularClass(data);

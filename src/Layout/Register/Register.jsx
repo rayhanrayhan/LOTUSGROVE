@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { useContext } from "react";
 import { AuthContext } from "../../Providers/AuthProvider";
+import axios from "axios";
 
 const Register = () => {
   const { createUser, upDateProfile } = useContext(AuthContext);
@@ -20,14 +21,19 @@ const Register = () => {
 
   const onSubmit = (data) => {
     const { name, photo, email, password } = data;
-    console.log(data);
+    const newUser = { name, email, photo, role: "student" };
     createUser(email, password)
       .then((res) => {
-        console.log("User created successfully");
         const loggedUser = res.user;
         // Additional actions
         upDateProfile(loggedUser, name, photo).then((res) => {
-          alert("Profile Updated");
+          axios
+            .post("https://lotusgrove-server-site.vercel.app/users", newUser)
+            .then((data) => {
+              if (data.data.insertedId) {
+                alert("user create success");
+              }
+            });
         });
       })
       .catch((error) => {

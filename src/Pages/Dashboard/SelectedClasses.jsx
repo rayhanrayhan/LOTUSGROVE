@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useEffect } from "react";
 import { useState } from "react";
 import { Helmet } from "react-helmet-async";
@@ -8,8 +8,10 @@ import axios from "axios";
 import { toast } from "react-toastify";
 import { useQuery } from "@tanstack/react-query";
 import SelectedClassesData from "./SelectedClassesData";
+import { AuthContext } from "../../Providers/AuthProvider";
 
 const SelectedClasses = () => {
+  const { user } = useContext(AuthContext);
   const {
     data: classData = [],
     isLoading: loading,
@@ -17,27 +19,31 @@ const SelectedClasses = () => {
   } = useQuery({
     queryKey: ["classData"],
     queryFn: async () => {
-      const res = await axios.get("http://localhost:5000/selectedClass");
+      const res = await axios.get(
+        `https://lotusgrove-server-site.vercel.app/selectedClass/${user?.email}`
+      );
       return res.data;
     },
   });
   const handleDelete = (id) => {
-    axios.delete(`http://localhost:5000/selectedClass/${id}`).then((data) => {
-      console.log(data.data);
-      if (data.data.deletedCount > 0) {
-        refetch();
-        toast.success("🦄 Delete Selection", {
-          position: "top-center",
-          autoClose: 3000,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-          progress: undefined,
-          theme: "light",
-        });
-      }
-    });
+    axios
+      .delete(`https://lotusgrove-server-site.vercel.app/selectedClass/${id}`)
+      .then((data) => {
+        console.log(data.data);
+        if (data.data.deletedCount > 0) {
+          refetch();
+          toast.success("🦄 Delete Selection", {
+            position: "top-center",
+            autoClose: 3000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+          });
+        }
+      });
   };
 
   return (

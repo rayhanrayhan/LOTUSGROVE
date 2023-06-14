@@ -22,7 +22,7 @@ const MyClasses = () => {
     queryKey: ["classData", user?.email], // Include user email in the queryKey
     queryFn: async () => {
       const res = await axios.get(
-        `http://localhost:5000/classes/${user?.email}`
+        `https://lotusgrove-server-site.vercel.app/classes/${user?.email}`
       ); // Pass the user email in the URL
       return res.data;
     },
@@ -30,8 +30,8 @@ const MyClasses = () => {
 
   const navigate = useNavigate();
   const handleEdit = (id) => {
-    // Implement your edit logic here, e.g., navigate to the edit page or open a modal
-    console.log("Editing post with ID:", id);
+    // Implement your edit logic here
+
     navigate(`/dashboard/addClass?postId=${id}`);
   };
 

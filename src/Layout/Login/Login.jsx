@@ -10,6 +10,7 @@ import {
   validateCaptcha,
 } from "react-simple-captcha";
 import { AuthContext } from "../../Providers/AuthProvider";
+import axios from "axios";
 
 const Login = () => {
   const captchaRef = useRef(null);
@@ -32,6 +33,19 @@ const Login = () => {
     googleSignIn()
       .then((res) => {
         const user = res.user;
+        const newUser = {
+          name: user?.displayName,
+          email: user?.email,
+          photo: user?.photoURL,
+          role: "student",
+        };
+        axios
+          .post("https://lotusgrove-server-site.vercel.app/users", newUser)
+          .then((data) => {
+            if (data.data.insertedId) {
+              alert("user create success");
+            }
+          });
       })
       .catch((error) => {
         setError(error.message);

@@ -34,7 +34,10 @@ const ClassesAllCard = ({ classItem }) => {
     }
 
     axios
-      .post("http://localhost:5000/selectedClass", selectedClasses)
+      .post(
+        "https://lotusgrove-server-site.vercel.app/selectedClass",
+        selectedClasses
+      )
       .then((data) => {
         console.log(data.data);
         if (data.data.insertedId) {

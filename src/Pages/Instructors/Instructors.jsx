@@ -10,7 +10,7 @@ const Instructors = () => {
   const [popularInsTructor, setPopularInsTructor] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/classes")
+    fetch("https://lotusgrove-server-site.vercel.app/classes")
       .then((res) => res.json())
       .then((data) => {
         setPopularInsTructor(data);

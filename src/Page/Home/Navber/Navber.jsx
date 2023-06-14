@@ -3,9 +3,11 @@ import { Link, NavLink } from "react-router-dom";
 import logo from "./../../../assets/LotusGrove.png";
 import { useContext } from "react";
 import { AuthContext } from "../../../Providers/AuthProvider";
+import useLoggedUsers from "../../../hooks/useLoggedUsers";
 
 const Navber = () => {
   const { user, logOut } = useContext(AuthContext);
+  const [loggedUsers] = useLoggedUsers();
   const navPages = (
     <>
       <li>
@@ -46,16 +48,42 @@ const Navber = () => {
       </li>
 
       <li>
-        <NavLink
-          to="/dashboard"
-          className={({ isActive }) =>
-            isActive
-              ? "block font-medium text-[#dc2e33] text-lg"
-              : "block font-medium text-lg"
-          }
-        >
-          Dashboard
-        </NavLink>
+        {loggedUsers?.role === "student" &&
+          <NavLink
+            to="/dashboard/selectedClass"
+            className={({ isActive }) =>
+              isActive
+                ? "block font-medium text-[#dc2e33] text-lg"
+                : "block font-medium text-lg"
+            }
+          >
+            Dashboard
+          </NavLink>
+        }
+        {loggedUsers?.role === "instructor" &&
+          <NavLink
+            to="/dashboard/myClasses"
+            className={({ isActive }) =>
+              isActive
+                ? "block font-medium text-[#dc2e33] text-lg"
+                : "block font-medium text-lg"
+            }
+          >
+            Dashboard
+          </NavLink>
+        }
+        {loggedUsers?.role === "admin" &&
+          <NavLink
+            to="/dashboard/manegeClasses"
+            className={({ isActive }) =>
+              isActive
+                ? "block font-medium text-[#dc2e33] text-lg"
+                : "block font-medium text-lg"
+            }
+          >
+            Dashboard
+          </NavLink>
+        }
       </li>
     </>
   );

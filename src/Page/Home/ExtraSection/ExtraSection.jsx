@@ -5,7 +5,7 @@ const ExtraSection = () => {
   const [extraClass, setExtraClass] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/extra")
+    fetch("https://lotusgrove-server-site.vercel.app/extra")
       .then((res) => res.json())
       .then((data) => {
         setExtraClass(data);

@@ -1,11 +1,11 @@
-import React from 'react';
+import React from "react";
 
 const EnrolledClasses = () => {
-    return (
-        <div>
-            EnrolledClasses coming
-        </div>
-    );
+  return (
+    <div>
+      <h2>EnrolledClasses coming</h2>
+    </div>
+  );
 };
 
 export default EnrolledClasses;

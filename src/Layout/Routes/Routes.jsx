@@ -14,6 +14,7 @@ import AddAClass from "../../Pages/Dashboard/AddAClass";
 import ManageClasses from "../../Pages/Dashboard/ManageClasses";
 import ManageUsers from "../../Pages/Dashboard/ManageUsers";
 import Feedback from "../../Pages/Dashboard/Feedback";
+import Payment from "../../Pages/Payment/Payment";
 export const router = createBrowserRouter([
   {
     path: "/",
@@ -73,6 +74,10 @@ export const router = createBrowserRouter([
       {
         path: "manageUsers",
         element: <ManageUsers></ManageUsers>,
+      },
+      {
+        path: "payment",
+        element: <Payment></Payment>,
       },
     ],
   },

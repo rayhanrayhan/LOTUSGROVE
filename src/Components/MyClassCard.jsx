@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { MdPayment } from "react-icons/md";
-import { AiFillEdit } from "react-icons/ai";
+import { AiFillEdit } from "react-icons/Ai";
 const MyClassCard = ({ data, index, handleEdit }) => {
   const { _id, email, classId, name, status, image, price, seats } = data;
 

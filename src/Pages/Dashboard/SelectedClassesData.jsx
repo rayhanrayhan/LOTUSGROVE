@@ -21,9 +21,9 @@ const SelectedClassesData = ({ data, handleDelete, index }) => {
       <td className="px-4 py-2">{price}</td>
       <td className="px-4 py-2">
         <div className="flex gap-2">
-          <button className="btn btn-circle ">
+          <Link to="/dashboard/payment" className="btn btn-circle ">
             <MdPayment />
-          </button>
+          </Link>
 
           <button onClick={() => handleDelete(_id)} className="btn btn-circle ">
             <AiOutlineDelete />

@@ -33,7 +33,7 @@ const Main = () => {
       <Navber></Navber>
       {/* <Outlet></Outlet> */}
       {content}
-      <Footer></Footer>
+      <Footer></Footer>rn
       <ToastContainer />
     </div>
   );

@@ -6,88 +6,9 @@ import "react-toastify/dist/ReactToastify.css";
 import { useContext } from "react";
 import { AuthContext } from "../../Providers/AuthProvider";
 import axios from "axios";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 const ClassesAllCard = ({ classItem }) => {
-  // const {
-  //   image,
-  //   price,
-  //   instructorImage,
-  //   instructor,
-  //   des,
-  //   seats,
-  //   name,
-  //   students,
-  // } = classItem;
-
-  // const { user } = useContext(AuthContext);
-  // const [showFullDescription, setShowFullDescription] = useState(false);
-  // const [selectedClassIds, setSelectedClassIds] = useState([]);
-
-  // const toggleDescription = () => {
-  //   setShowFullDescription(!showFullDescription);
-  // };
-
-  // const handleSelectedClass = (item) => {
-  //   if (selectedClassIds.includes(item._id)) {
-  //     toast.warning("Already Added to Dashboard", {
-  //       position: "top-center",
-  //       autoClose: 3000,
-  //       theme: "light",
-  //     });
-  //     return;
-  //   }
-
-  //   const selectedClasses = {
-  //     email: user.email,
-  //     classId: item._id,
-  //     name: item.name,
-  //     image: item.image,
-  //     price: item.price,
-  //     seats: item.seats,
-  //   };
-
-  //   if (seats === 0) {
-  //     return;
-  //   }
-
-  //   axios
-  //     .post(
-  //       "https://lotusgrove-server-site.vercel.app/selectedClass",
-  //       selectedClasses
-  //     )
-  //     .then((data) => {
-  //       console.log(data.data);
-  //       if (data.data.insertedId) {
-  //         setSelectedClassIds((prevIds) => [...prevIds, item._id]);
-  //         toast.success("🦄 Class Selected", {
-  //           position: "top-center",
-  //           autoClose: 3000,
-  //           hideProgressBar: false,
-  //           closeOnClick: true,
-  //           pauseOnHover: true,
-  //           draggable: true,
-  //           progress: undefined,
-  //           theme: "light",
-  //         });
-  //       } else {
-  //         toast.warning("Already Added to Dashboard", {
-  //           position: "top-center",
-  //           autoClose: 3000,
-  //           theme: "light",
-  //         });
-  //       }
-  //     });
-  // };
-
-  // useEffect(() => {
-  //   AOS.init({ duration: 800 });
-  //   AOS.refresh();
-  // }, []);
-
-  // const seatLeft = seats - students;
-  // const isDisabled = seats === 0 || selectedClassIds.includes(classItem._id);
-
   const {
     image,
     price,
@@ -102,7 +23,8 @@ const ClassesAllCard = ({ classItem }) => {
   const { user } = useContext(AuthContext);
   const [showFullDescription, setShowFullDescription] = useState(false);
   const [selectedClassIds, setSelectedClassIds] = useState([]);
-
+  const navigate = useNavigate();
+  const location = useLocation();
   const toggleDescription = () => {
     setShowFullDescription(!showFullDescription);
   };
@@ -244,12 +166,14 @@ const ClassesAllCard = ({ classItem }) => {
                     Select Class
                   </button>
                 ) : (
-                  <Link
-                    to="/login"
+                  <button
+                    onClick={() =>
+                      navigate("/login", { state: { from: location } })
+                    }
                     className="btn btn-outline btn-success shadow-md drop-shadow-md text-white hover:drop-shadow-xl"
                   >
                     Select Class
-                  </Link>
+                  </button>
                 )}
               </>
             )}

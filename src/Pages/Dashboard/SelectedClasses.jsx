@@ -12,6 +12,7 @@ import { AuthContext } from "../../Providers/AuthProvider";
 
 const SelectedClasses = () => {
   const { user } = useContext(AuthContext);
+  const token = localStorage.getItem("access-token");
   const {
     data: classData = [],
     isLoading: loading,
@@ -20,7 +21,8 @@ const SelectedClasses = () => {
     queryKey: ["classData"],
     queryFn: async () => {
       const res = await axios.get(
-        `https://lotusgrove-server-site.vercel.app/selectedClass/${user?.email}`
+        `https://lotusgrove-server-site.vercel.app/selectedClass/${user?.email}`,
+        { headers: { Authorization: `bearer ${token}` } }
       );
       return res.data;
     },
